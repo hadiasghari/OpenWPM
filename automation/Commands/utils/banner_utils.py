@@ -104,7 +104,7 @@ def find_banners_by_selectors(page_url, page_html, banner_list_loc, logger=None)
     for i, css in enumerate(selectors):
         time1 = time()
         match = doc.cssselect(css)  # doesn't seem to raise an exception
-        if time() - time1 >= 0.03:
+        if time() - time1 >= 0.04:
             log_func("find_banners_by_selectors: SLOW cssselect(#%d '%s') => %0.3fs" %
                      (i+1, css, time()-time1))
         if match and len(match) > 10:
