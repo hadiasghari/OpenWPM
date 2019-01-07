@@ -12,6 +12,8 @@ RUN apt-get -qqy update
 RUN apt-get -qqy install bzip2 unzip sudo nano x11-apps ca-certificates python wget curl
 RUN apt-get -qqy install fping openvpn dialog iputils-ping net-tools socat
 RUN apt-get -qqy install firefox htop git python-dev  libxml2-dev libxslt-dev libffi-dev libssl-dev build-essential xvfb libboost-python-dev libleveldb-dev libjpeg-dev libleveldb1v5
+RUN apt-get -qqy install psmisc dnsutils traceroute
+
 
 #=============================================================
 # Copy OpenWPM source
@@ -55,7 +57,7 @@ RUN cd /opt/OpenWPM/ \
 #=============================================================
 
 RUN cd /opt/OpenWPM/ \
-    && wget --no-verbose https://ftp.mozilla.org/pub/firefox/releases/52.4.1esr/linux-x86_64/en-US/firefox-52.4.1esr.tar.bz2 \
+    && wget --no-verbose https://ftp.mozilla.org/pub/firefox/releases/52.9.0esr/linux-x86_64/en-US/firefox-52.9.0esr.tar.bz2 \
     && tar jxf firefox*.tar.bz2 \
     && rm -rf firefox-bin \
     && mv firefox firefox-bin \
